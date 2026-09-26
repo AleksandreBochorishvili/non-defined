@@ -1,213 +1,182 @@
 .burgerContainer {
   display: none;
-  align-items: center;
-  justify-content: space-between;
-  background: #0a0a0a;
-  padding: 10px 16px;
-  position: sticky;
-  top: 0;
-  z-index: 1001;
 }
 
 .container {
-  display: flex;
   position: fixed;
-  flex-direction: column;
-  width: 50px;
-  height: 100%;
   top: 88px;
-  gap: 42px;
-  background-color: #0E0913;
-  border-radius: 0 18px 18px 0;
+  left: 0;
+  bottom: 0;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 82px;
+  padding: 18px 14px 18px 12px;
+  background: rgba(16, 12, 24, 0.92);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transition: width 0.25s ease;
+}
+
+.container:hover {
+  width: 220px;
 }
 
 .logo {
-  padding: 0 0 0 8px;
+  width: 42px;
+  height: 42px;
+  padding: 0 0 0 6px;
+  filter: drop-shadow(0 0 18px rgba(159, 107, 255, 0.7));
 }
 
 .pages {
   display: flex;
   flex-direction: column;
-}
-
-.span {
-  opacity: 0;
-}
-
-.container:hover .span{
-  opacity: 1;
-}
-
-.container:hover {
-  width: 25%;
-  transition: width 0.3s ease;
-}
-
-.image {
-  margin-top: 10px;
+  width: 100%;
+  margin-top: 28px;
+  gap: 10px;
 }
 
 .link {
   display: flex;
-  text-decoration: none;
   align-items: center;
-  padding-left: 5px;
-  margin-left: 4px;
-  gap: 10px;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
 
-    .image {
-      filter: grayscale(100%);
-      transition: filter 0.3s;
-    }
-
-    .span {
-      color: rgb(255, 255, 255);
-      transition: color 0.3s;
-    }
-
-
-    &:hover {
-      width: 224px;
-      border-radius: 16px;
-      background: #ffffff0d;
-
-    .span {
-      color: #ffffff;
-    }
-    
-    .image {
-      display: flex;
-    }
-  }
+.link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  transform: translateX(2px);
 }
 
 .active {
-
-  .span {
-    color: purple;
-  }
-
-  .image {
-    filter: hue-rotate(270deg);
-  }
-
-  &:hover {
-
-    .span {
-      color: purple;
-    }
-
-    .image {
-      filter: hue-rotate(270deg);
-    }
-
-  }
+  background: rgba(159, 107, 255, 0.14);
+  color: white;
+  border: 1px solid rgba(159, 107, 255, 0.22);
 }
 
 .image {
-    margin-bottom: 19px;
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1) opacity(0.8);
+  flex-shrink: 0;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+.span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
 
-  .burgerContainer {
-    display: none;
-  }
+.container:hover .span {
+  opacity: 1;
+}
 
+.active .image {
+  filter: brightness(1) saturate(1.5) drop-shadow(0 0 16px rgba(159, 107, 255, 0.8));
+}
+
+@media (max-width: 1023px) {
   .container {
-    min-height: 246.6vh;
-    height: 100%;
-  }
-
-.link {
-
-  .span {
-    color: #ffffff;
-    transition: color 0.3s;
-  }
-
-  &:hover {
-      width: 170px;
-      border-radius: 16px;
-      background: #ffffff0d;
-
-    .span {
-      color: #ffffff;
-    }
-  }
-
-  .active {
-
-    .span {
-      color: purple;
-    }
-
-      &:hover {
-
-        .span {
-          color: purple;
-        }
-
-        .image {
-          filter: hue-rotate(270deg);
-        }
-      }
-    }
+    top: 72px;
   }
 }
 
-@media (min-width: 340px) and (max-width: 767px) {
-
+@media (max-width: 767px) {
   .burgerContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 10px;
-    background-color: #130C19;
+    padding: 18px 14px;
+    background: rgba(8, 6, 17, 0.82);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
   }
 
   .accesories {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
   }
 
   .logo {
-    width: 40px;
+    width: 34px;
+    height: 34px;
   }
 
   .burgerMenu {
-    width: 28px;
-    height: 22px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .line {
-    height: 3px;
-    width: 100%;
-    background: white;
-    border-radius: 4px;
-    transition: 0.3s;
+  .burgerMenu img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bellContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .bellContainer img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+  }
+
+  .notificationBadge {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
   }
 
   .container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    width: 220px;
     transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .open {
     transform: translateX(0);
   }
 
-  .burgerContainer {
-        display: flex;
+  .container:hover {
+    width: 220px;
   }
 
-  .container {
-    position: fixed;
-    top: 90px;
-    height: 100vh;
+  .span {
+    opacity: 1;
   }
 }
