@@ -42,7 +42,7 @@ export default function Login() {
           <div className={styles.formFooter}>
             <button type="submit" className={styles.formButton}>Login</button>
             <p className={styles.formDontHaveAcc}>
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link className={styles.formSignup} href="#">Sign up</Link>
             </p>
           </div>
